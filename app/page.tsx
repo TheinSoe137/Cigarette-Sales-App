@@ -1,65 +1,192 @@
-import Image from "next/image";
+"use client";
+import React, { useState,useEffect } from 'react';
+// Assuming products.json is one level up from app/page.tsx
+import initialData from '../data/default.json'
+import * as XLSX from 'xlsx';
 
-export default function Home() {
+// Define the structure of your product data
+interface Product {
+  id: number;
+  name: string;
+  buyPrice: number;
+  salePrice: number;
+  initialStock: number;
+  revenue:number;
+  remainingStock: number;
+}
+
+export default function SalesApp() {
+  const [products, setProducts] = useState<Product[]>(initialData);
+  const [editMode, setEditMode] = useState(false);
+  const [currentDate, setCurrentDate] = useState('');
+
+  // --- Date Initialization ---
+  useEffect(() => {
+    const today = new Date();
+    // Format: DD/MM/YYYY
+    const formattedDate = `${String(today.getDate()).padStart(2, '0')}/${String(today.getMonth() + 1).padStart(2, '0')}/${today.getFullYear()}`;
+    setCurrentDate(formattedDate);
+  }, []);
+
+  // --- Calculations ---
+  // Calculate Global Totals (Sold, Revenue, Profit)
+  const totalStats = products.reduce((acc, p) => {
+    const sold = p.initialStock - p.remainingStock;
+    acc.sold += sold;
+    acc.revenue += sold * p.salePrice;
+    acc.profit += sold * (p.salePrice - p.buyPrice);
+    return acc;
+  }, { sold: 0, revenue: 0, profit: 0 });
+
+  // --- State Handlers ---
+  const updateStock = (id: number, value: string) => {
+    // Treat empty string as 0 for robust input handling
+    const numValue = value === "" ? 0 : parseInt(value);
+    setProducts(products.map(p => 
+      p.id === id ? { ...p, remainingStock: numValue } : p
+    ));
+  };
+
+  const updateDefault = (id: number, field: keyof Product, value: string | number) => {
+    let finalValue: string | number = value;
+
+    // Convert prices and stocks to numbers if the field isn't 'name'
+    if (field !== 'name' && typeof value === 'string') {
+        // Use parseFloat for prices and parseInt for stock counts
+        finalValue = field.includes('Price') ? parseFloat(value) : parseInt(value);
+    }
+
+    setProducts(products.map(p => 
+      p.id === id ? { ...p, [field]: finalValue } : p
+    ));
+  };
+
+  // --- Excel Export Function ---
+  const downloadExcel = () => {
+    const dataForExcel = products.map(p => {
+      const sold = p.initialStock - p.remainingStock;
+      return {
+        "Date": currentDate,
+        "Product Name": p.name,
+        "Buy Price": p.buyPrice,
+        "Sale Price": p.salePrice,
+        "Initial Stock": p.initialStock,
+        "Remaining Stock": p.remainingStock,
+        "Items Sold": sold,
+        "Total Revenue": sold * p.salePrice,
+        "Total Profit": sold * (p.salePrice - p.buyPrice)
+      };
+    });
+    const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, `Sales_${currentDate.replace(/\//g, '-')}`);
+    XLSX.writeFile(workbook, `Sales_Report_${currentDate.replace(/\//g, '-')}.xlsx`);
+  };
+
+  // --- Rendered Component ---
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-gray-400 pt-4 font-sans text-gray-900">
+      <div className="max-w-5xl mx-auto">
+        
+      <div className="text-center mb-6 py-3 bg-white rounded-xl shadow-sm border border-gray-200">
+            <h2 className="text-xl font-extrabold text-gray-800 tracking-wider">
+                DATE: {currentDate}
+            </h2>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+       
+       
+
+        {/* Inventory Table */}
+      {/* Inventory Table (Mobile Optimized) */}
+      <div className="bg-white shadow-md border border-gray-200 overflow-hidden">
+          {/* Added overflow-x-auto here for horizontal scrolling on small screens */}
+          <div className="overflow-x-auto"> 
+            <table className="w-full text-left">
+              <thead className="bg-gray-100 border-b border-gray-300">
+                <tr>
+                  <th className="p-2 font-bold text-gray-600 min-w-[120px]">Product</th>
+                  <th className="p-2 font-bold text-gray-600 min-w-[80px]">Buy $</th>
+                  <th className="p-2 font-bold text-gray-600 min-w-[80px]">Sale $</th>
+                  <th className="p-2 font-bold text-red-600 min-w-[90px]">Init. Stock</th>
+                  <th className="p-2 font-bold text-blue-700 bg-blue-100 min-w-[120px]">Remaining (Input)</th>
+                  <th className="p-2 font-bold text-gray-600 min-w-[100px]">Revenue</th>
+                  <th className="p-2 font-bold text-gray-600 min-w-[100px]">Profit</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((p) => {
+                  const sold = p.initialStock - p.remainingStock;
+                  const revenue = sold * p.salePrice; // Calculate revenue
+                  const profit = sold * (p.salePrice - p.buyPrice);
+                  
+                  return (
+                    <tr key={p.id} className="border-b last:border-0 hover:bg-gray-50 transition">
+                      <td className="p-2 min-w-[120px]">
+                        {editMode ? <input className="border rounded p-1 w-full" value={p.name} onChange={(e) => updateDefault(p.id, 'name', e.target.value)} /> : p.name}
+                      </td>
+                      <td className="p-2 min-w-[80px]">
+                        {editMode ? <input type="number" className="border rounded p-1 w-20" value={p.buyPrice} onChange={(e) => updateDefault(p.id, 'buyPrice', e.target.value)} /> : `$${p.buyPrice}`}
+                      </td>
+                      <td className="p-2 min-w-[80px]">
+                        {editMode ? <input type="number" className="border rounded p-1 w-20" value={p.salePrice} onChange={(e) => updateDefault(p.id, 'salePrice', e.target.value)} /> : `$${p.salePrice}`}
+                      </td>
+                      <td className="p-2 text-red-600 min-w-[90px]">
+                        {editMode ? <input type="number" className="border rounded p-1 w-20" value={p.initialStock} onChange={(e) => updateDefault(p.id, 'initialStock', e.target.value)} /> : p.initialStock}
+                      </td>
+                      <td className="p-2 bg-blue-50 min-w-[120px]">
+                        <input 
+                          type="number" 
+                          className="border-2 border-blue-400 rounded p-1 w-24 text-center font-bold focus:border-blue-600 outline-none transition"
+                          value={p.remainingStock} 
+                          onChange={(e) => updateStock(p.id, e.target.value)}
+                        />
+                      </td>
+                      {/* FIXED: Added .toFixed(2) for currency format */}
+                      <td className="p-4 font-bold text-blue-600 min-w-[100px]">${revenue.toFixed(2)}</td> 
+                      <td className="p-4 font-bold text-green-600 min-w-[100px]">${profit.toFixed(2)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </main>
+         {/* Total Summary Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+         
+          <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+            <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Total Revenue</p>
+            <p className="text-3xl font-black text-blue-600">${totalStats.revenue.toFixed(2)}</p>
+          </div>
+          <div className="bg-green-50 p-5 rounded-xl border border-green-200 shadow-sm">
+            <p className="text-sm text-green-700 uppercase font-bold tracking-wider">Net Profit</p>
+            <p className="text-3xl font-black text-green-700">${totalStats.profit.toFixed(2)}</p>
+          </div>
+        </div>
+
+        {/* Header and Controls */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-6 bg-gray-400 p-6 rounded-xl shadow-md border border-black-200">
+          <div>
+            <h1 className="text-2xl font-bold">Cigarette Sales Dashboard</h1>
+            <p className="text-gray-500 text-sm">Update remaining stock for instant profit calculation</p>
+          </div>
+          <div className="flex gap-3 mt-4 md:mt-0">
+            <button 
+              onClick={() => setEditMode(!editMode)}
+              className={`px-4 py-2 rounded-lg font-semibold transition ${editMode ? 'bg-orange-500 text-white hover:bg-orange-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+            >
+              {editMode ? "Save Changes" : "Edit Prices/Stock"}
+            </button>
+            <button 
+              onClick={downloadExcel} 
+              className="bg-black text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition"
+            >
+              Export Excel
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

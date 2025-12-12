@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Marlboro Gold",
+      "buyPrice": 12.00,
+      "salePrice": 18.00,
+      "initialStock": 50,
+      "remainingStock": 50
+    },
+    {
+      "id": 2,
+      "name": "Camel Blue",
+      "buyPrice": 10.50,
+      "salePrice": 15.00,
+      "initialStock": 40,
+      "remainingStock": 40
+    },
+    {
+      "id": 3,
+      "name": "Winston Red",
+      "buyPrice": 9.00,
+      "salePrice": 14.00,
+      "initialStock": 60,
+      "remainingStock": 60
+    }
+  ]
