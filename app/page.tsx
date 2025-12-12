@@ -11,15 +11,14 @@ interface Product {
   buyPrice: number;
   salePrice: number;
   initialStock: number;
-  revenue:number;
   remainingStock: number;
+  // NOTE: Do NOT include calculated fields (like revenue or profit) here.
 }
 
 export default function SalesApp() {
-  const [products, setProducts] = useState<Product[]>(initialData);
+  const [products, setProducts] = useState<Product[]>(initialData as Product[]);
   const [editMode, setEditMode] = useState(false);
   const [currentDate, setCurrentDate] = useState('');
-
   // --- Date Initialization ---
   useEffect(() => {
     const today = new Date();
