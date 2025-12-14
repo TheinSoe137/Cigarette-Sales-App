@@ -1,8 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📈 Cigarette Sales Daily Tracker
 
-## Getting Started
+## 📜 Project Title and Description
 
-First, run the development server:
+This application is a dedicated utility tool designed to accurately **calculate and track the daily sales of a cigarette or convenience store**. It provides a structured interface for inputting sales data, simplifying the often complex process of daily reconciliation and stock checking for specific product categories.
+
+> A simple, efficient, and modern web application to manage daily sales calculations and store operations data.
+
+### ✨ Key Features
+* **Daily Sales Calculation:** Automates the calculation of total daily sales and revenue.
+* **Data Input Interface:** Provides a clear form or interface for entering product quantities and prices.
+* **TypeScript Reliability:** Built with TypeScript for increased code stability and reduced runtime errors.
+* **Responsive Design:** Ensures the app is usable on various devices (desktop, tablet, mobile).
+
+---
+
+## ⚙️ Tech Stack Used
+
+This project is built using the latest stable technologies in the React ecosystem, offering a high-performance and reliable user experience.
+
+| Technology | Purpose | Badge |
+| :--- | :--- | :--- |
+| **Next.js** | React Framework providing powerful routing, rendering, and performance features. | [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/) |
+| **TypeScript** | Primary language for type safety across the entire codebase. | [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) |
+| **React** | Core library for building dynamic and stateful user interfaces. | [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) |
+| **Vercel** | Deployment platform, providing easy integration with Next.js. | [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/) |
+
+---
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+
+You need to have **Node.js** and a package manager installed on your machine.
+
+* [Node.js](https://nodejs.org/) (LTS version recommended)
+* `npm` (Comes with Node.js) or `yarn` or `pnpm`
+
+### Step-by-Step Instructions
+
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/TheinSoe137/Cigarette-Sales-App.git](https://github.com/TheinSoe137/Cigarette-Sales-App.git)
+    cd Cigarette-Sales-App
+    ```
+
+2.  **Install Dependencies**
+    Use your preferred package manager to install the project dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+3.  **No Environment Variables Needed (Typically)**
+    Based on the project scope, a `.env` file is likely not required unless external services (like a database or external API) are integrated.
+
+---
+
+## 🏃 How to Run / Usage
+
+### Start the Development Server
+
+Execute the following command to start the application locally:
 
 ```bash
 npm run dev
@@ -10,27 +71,16 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
+---
+### Access the Application
+Open your browser and navigate to the local development URL:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Usage Example
+Input the sales data for various cigarette brands or stock keeping units (SKUs) into the provided fields.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application calculates the total revenue based on the quantity sold and unit price.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use the displayed totals to reconcile your daily physical cash and stock count.
