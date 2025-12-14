@@ -84,56 +84,56 @@
     "name": "M_03",
     "buyPrice": 110000,
     "salePrice": 125000,
-    "initialStock": 4,
-    "remainingStock": 4
+    "initialStock": 40,
+    "remainingStock": 40
   },
   {
     "id": 12,
     "name": "M_01",
     "buyPrice":45000,
     "salePrice": 90000,
-    "initialStock": 3,
-    "remainingStock": 3
+    "initialStock": 30,
+    "remainingStock": 30
   },
   {
     "id": 13,
     "name": "Winston Blue",
     "buyPrice": 36000,
     "salePrice": 60000,
-    "initialStock": 1,
-    "remainingStock": 1
+    "initialStock": 10,
+    "remainingStock": 10
   },
   {
     "id": 14,
     "name": "Winston Caster",
     "buyPrice": 36000,
     "salePrice": 65000,
-    "initialStock": 2,
-    "remainingStock": 2
+    "initialStock": 20,
+    "remainingStock": 20
   },
   {
     "id": 15,
     "name": "Red Blue",
     "buyPrice": 18000,
     "salePrice": 20000,
-    "initialStock": 2,
-    "remainingStock": 2
+    "initialStock": 20,
+    "remainingStock": 20
   },
   {
     "id": 16,
     "name": "Napoli",
     "buyPrice":28000 ,
     "salePrice": 32000,
-    "initialStock": 3,
-    "remainingStock": 3
+    "initialStock": 30,
+    "remainingStock": 30
   },
   {
     "id": 17,
     "name": "Ruby",
     "buyPrice": 28200,
     "salePrice": 30000,
-    "initialStock": 2,
-    "remainingStock": 2
+    "initialStock": 20,
+    "remainingStock": 20
   }
 
 ]
