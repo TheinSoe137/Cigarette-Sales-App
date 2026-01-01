@@ -142,7 +142,7 @@ export default function SalesApp() {
                           onChange={(e) => updateStock(p.id, e.target.value)}
                         />
                       </td>
-                      <td className="p-4 font-bold text-yellow-600 min-w-[100px]"> ${sold}</td>
+                      <td className="p-4 font-bold text-yellow-600 min-w-[100px]"> {sold}</td>
                       <td className="p-4 font-bold text-blue-600 min-w-[100px]">${revenue}</td> 
                       <td className="p-4 font-bold text-green-600 min-w-[100px]">${profit}</td>
                     </tr>
