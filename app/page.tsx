@@ -106,9 +106,10 @@ export default function SalesApp() {
                 <tr>
                   <th className="p-2 font-bold text-gray-600 min-w-[120px]">Product</th>
                   <th className="p-2 font-bold text-gray-600 min-w-[80px]">Buy $</th>
-                  <th className="p-2 font-bold text-gray-600 min-w-[80px]">Sale $</th>
+                  <th className="p-2 font-bold text-gray-600 min-w-[80px]">Sell $</th>
                   <th className="p-2 font-bold text-red-600 min-w-[90px]">Init. Stock</th>
                   <th className="p-2 font-bold text-blue-700 bg-blue-100 min-w-[120px]">Remaining (Input)</th>
+                  <th className="p-2 font-bold text-yellow-600 min-w-[100px]">Sold</th>
                   <th className="p-2 font-bold text-gray-600 min-w-[100px]">Revenue</th>
                   <th className="p-2 font-bold text-gray-600 min-w-[100px]">Profit</th>
                 </tr>
@@ -141,9 +142,9 @@ export default function SalesApp() {
                           onChange={(e) => updateStock(p.id, e.target.value)}
                         />
                       </td>
-                      {/* FIXED: Added .toFixed(2) for currency format */}
-                      <td className="p-4 font-bold text-blue-600 min-w-[100px]">${revenue.toFixed(2)}</td> 
-                      <td className="p-4 font-bold text-green-600 min-w-[100px]">${profit.toFixed(2)}</td>
+                      <td className="p-4 font-bold text-yellow-600 min-w-[100px]"> ${sold}</td>
+                      <td className="p-4 font-bold text-blue-600 min-w-[100px]">${revenue}</td> 
+                      <td className="p-4 font-bold text-green-600 min-w-[100px]">${profit}</td>
                     </tr>
                   );
                 })}
