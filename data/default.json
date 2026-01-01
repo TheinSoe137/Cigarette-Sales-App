@@ -34,8 +34,8 @@
   {
     "id": 5,
     "name": "ကျားပျံ",
-    "buyPrice": 5500,
-    "salePrice": 6000,
+    "buyPrice": 6000,
+    "salePrice": 6500,
     "initialStock":10,
     "remainingStock": 10
   },
@@ -52,8 +52,8 @@
     "name": "မယ်ခွေ",
     "buyPrice": 4500,
     "salePrice": 4800,
-    "initialStock": 20,
-    "remainingStock": 20
+    "initialStock": 10,
+    "remainingStock": 10
   },
   {
     "id": 8,
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "name": "M_03",
-    "buyPrice": 11000,
+    "buyPrice": 11950,
     "salePrice": 12500,
     "initialStock": 40,
     "remainingStock": 40
@@ -100,8 +100,8 @@
     "name": "Winston Blue",
     "buyPrice": 3600,
     "salePrice": 6000,
-    "initialStock": 10,
-    "remainingStock": 10
+    "initialStock": 20,
+    "remainingStock": 20
   },
   {
     "id": 14,
