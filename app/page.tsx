@@ -121,7 +121,7 @@ export default function SalesApp() {
                   const profit = sold * (p.salePrice - p.buyPrice);
                   
                   return (
-                    <tr key={p.id} className="border-b last:border-0 hover:bg-gray-50 transition">
+                    <tr key={p.id} className="border-b last:border-0 hover:bg-blue-300 hover:shadow-md transition-all duration-200 cursor-pointer">
                       <td className="p-2 min-w-[120px]">
                         {editMode ? <input className="border rounded p-1 w-full" value={p.name} onChange={(e) => updateDefault(p.id, 'name', e.target.value)} /> : p.name}
                       </td>
@@ -157,11 +157,11 @@ export default function SalesApp() {
          
           <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
             <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Total Revenue</p>
-            <p className="text-3xl font-black text-blue-600">${totalStats.revenue.toFixed(2)}</p>
+            <p className="text-3xl font-black text-blue-600">${totalStats.revenue}</p>
           </div>
           <div className="bg-green-50 p-5 rounded-xl border border-green-200 shadow-sm">
             <p className="text-sm text-green-700 uppercase font-bold tracking-wider">Net Profit</p>
-            <p className="text-3xl font-black text-green-700">${totalStats.profit.toFixed(2)}</p>
+            <p className="text-3xl font-black text-green-700">${totalStats.profit}</p>
           </div>
         </div>
 
