@@ -76,8 +76,8 @@
     "name": "ငွေနဂါး",
     "buyPrice": 5850,
     "salePrice": 6500,
-    "initialStock": 20,
-    "remainingStock": 20
+    "initialStock": 15,
+    "remainingStock": 15
   },
   {
     "id":11,
@@ -108,10 +108,10 @@
   {
     "id": 14,
     "name": "M_03",
-    "buyPrice": 12100,
-    "salePrice": 12500,
-    "initialStock": 40,
-    "remainingStock": 40
+    "buyPrice": 13600,
+    "salePrice": 14000,
+    "initialStock": 30,
+    "remainingStock": 30
   },
   {
     "id": 15,
@@ -134,8 +134,8 @@
     "name": "Winston Caster",
     "buyPrice": 3600,
     "salePrice": 7000,
-    "initialStock": 20,
-    "remainingStock": 20
+    "initialStock": 10,
+    "remainingStock": 10
   },
   {
     "id": 18,
@@ -150,8 +150,8 @@
     "name": "Napoli",
     "buyPrice":2260 ,
     "salePrice": 2500,
-    "initialStock": 40,
-    "remainingStock": 40
+    "initialStock": 50,
+    "remainingStock": 50
   },
   {
     "id": 20,
@@ -165,9 +165,9 @@
     "id": 21,
     "name": "M7_ဝါ",
     "buyPrice": 4500,
-    "salePrice": 5500,
-    "initialStock": 10,
-    "remainingStock": 10
+    "salePrice": 5000,
+    "initialStock": 20,
+    "remainingStock": 20
   },
   {
     "id": 22,
