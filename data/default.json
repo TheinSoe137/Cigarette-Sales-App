@@ -4,8 +4,8 @@
     "name": "ရိုးရိုးကြယ်နီ",
     "buyPrice": 4250,
     "salePrice": 4400,
-    "initialStock": 15,
-    "remainingStock": 15
+    "initialStock": 20,
+    "remainingStock": 20
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "နှင်းဆီ",
     "buyPrice": 4500,
-    "salePrice": 4800,
+    "salePrice": 5300,
     "initialStock": 20,
     "remainingStock": 20
   },
@@ -84,8 +84,8 @@
     "name": "ရိုး_ငွေကြယ်မင်း",
     "buyPrice": 4300,
     "salePrice": 4500,
-    "initialStock": 10,
-    "remainingStock": 10
+    "initialStock": 0,
+    "remainingStock": 0
 
   },
   {
@@ -93,8 +93,8 @@
     "name": "ရှယ်_ငွေကြယ်မင်း",
     "buyPrice": 4750,
     "salePrice": 5000,
-    "initialStock": 10,
-    "remainingStock": 10
+    "initialStock": 5,
+    "remainingStock":5
 
   },
   {
@@ -148,8 +148,8 @@
   {
     "id": 19,
     "name": "Napoli",
-    "buyPrice":2260 ,
-    "salePrice": 2500,
+    "buyPrice":1950 ,
+    "salePrice": 2300,
     "initialStock": 50,
     "remainingStock": 50
   },
