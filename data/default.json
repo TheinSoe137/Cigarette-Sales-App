@@ -3,15 +3,15 @@
     "id": 1,
     "name": "ရိုးရိုးကြယ်နီ",
     "buyPrice": 4600,
-    "salePrice": 4750,
-    "initialStock": 20,
-    "remainingStock": 20
+    "salePrice": 4700,
+    "initialStock": 15,
+    "remainingStock": 15
   },
   {
     "id": 2,
     "name": "ရှယ်ကြယ်နီ",
     "buyPrice": 5500,
-    "salePrice": 5650,
+    "salePrice": 5700,
     "initialStock": 50,
     "remainingStock": 50
   },
@@ -26,10 +26,10 @@
   {
     "id": 4,
     "name": "ဆင်ဆင်",
-    "buyPrice": 5100,
-    "salePrice": 5300,
-    "initialStock": 10,
-    "remainingStock": 10
+    "buyPrice": 5400,
+    "salePrice": 5700,
+    "initialStock": 5,
+    "remainingStock": 5
   },
   {
     "id": 5,
@@ -44,8 +44,8 @@
     "name": "ပိုလာ",
     "buyPrice": 4950,
     "salePrice": 5200,
-    "initialStock": 50,
-    "remainingStock": 50
+    "initialStock": 70,
+    "remainingStock": 70
   },
   {
     "id": 7,
@@ -58,16 +58,16 @@
   {
     "id": 8,
     "name": "ရိုးရွှေမန်းသူ",
-    "buyPrice": 11500,
-    "salePrice": 13000,
+    "buyPrice": 13500,
+    "salePrice": 15000,
     "initialStock": 5,
     "remainingStock": 5
   },
   {
     "id": 9,
     "name": "ရှယ်ရွှေမန်းသူ",
-    "buyPrice": 3500,
-    "salePrice": 4000,
+    "buyPrice": 4000,
+    "salePrice": 4500,
     "initialStock": 10,
     "remainingStock": 10
   },
@@ -102,8 +102,8 @@
     "name": "ညိုကီ",
     "buyPrice": 3500,
     "salePrice": 4000,
-    "initialStock": 5,
-    "remainingStock": 5
+    "initialStock": 0,
+    "remainingStock": 0
   },
   {
     "id": 14,
@@ -123,9 +123,9 @@
   },
   {
     "id": 16,
-    "name": "Winston Purple",
-    "buyPrice": 3600,
-    "salePrice": 7000,
+    "name": "Red Blue",
+    "buyPrice": 2300,
+    "salePrice": 3000,
     "initialStock": 10,
     "remainingStock": 10
   },
@@ -134,10 +134,10 @@
   {
     "id": 17,
     "name": "Napoli",
-    "buyPrice":1820 ,
-    "salePrice": 2300,
-    "initialStock": 60,
-    "remainingStock": 60
+    "buyPrice":2220 ,
+    "salePrice": 2500,
+    "initialStock": 70,
+    "remainingStock": 70
   },
   {
     "id": 18,
@@ -151,9 +151,9 @@
     "id": 19,
     "name": "M7_ဝါ",
     "buyPrice": 4500,
-    "salePrice": 5000,
-    "initialStock": 30,
-    "remainingStock": 30
+    "salePrice": 4700,
+    "initialStock": 40,
+    "remainingStock": 40
   },
   {
     "id": 20,
