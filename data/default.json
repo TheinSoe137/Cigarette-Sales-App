@@ -42,8 +42,8 @@
   {
     "id": 6,
     "name": "ပိုလာ",
-    "buyPrice": 4950,
-    "salePrice": 5200,
+    "buyPrice": 5150,
+    "salePrice": 5400,
     "initialStock": 70,
     "remainingStock": 70
   },
@@ -74,8 +74,8 @@
   {
     "id": 10,
     "name": "ငွေနဂါး",
-    "buyPrice": 5850,
-    "salePrice": 6500,
+    "buyPrice": 6180,
+    "salePrice": 6700,
     "initialStock": 15,
     "remainingStock": 15
   },
@@ -99,30 +99,22 @@
   },
   {
     "id":13,
-    "name": "ညိုကီ",
-    "buyPrice": 3500,
-    "salePrice": 4000,
+    "name": "Doekit",
+    "buyPrice": 4200,
+    "salePrice": 4400,
     "initialStock": 0,
     "remainingStock": 0
   },
   {
     "id": 14,
-    "name": "M_03",
-    "buyPrice": 15000,
-    "salePrice": 16000,
-    "initialStock": 30,
-    "remainingStock": 30
+    "name": "M_01",
+    "buyPrice":8800,
+    "salePrice": 9500,
+    "initialStock": 20,
+    "remainingStock": 20
   },
   {
     "id": 15,
-    "name": "M_01",
-    "buyPrice":4500,
-    "salePrice": 9000,
-    "initialStock": 30,
-    "remainingStock": 30
-  },
-  {
-    "id": 16,
     "name": "Red Blue",
     "buyPrice": 2300,
     "salePrice": 3000,
@@ -132,36 +124,36 @@
   
   
   {
-    "id": 17,
+    "id": 16,
     "name": "Napoli",
-    "buyPrice":2220 ,
-    "salePrice": 2500,
-    "initialStock": 70,
-    "remainingStock": 70
+    "buyPrice":1850 ,
+    "salePrice": 2250,
+    "initialStock": 80,
+    "remainingStock": 80
   },
   {
-    "id": 18,
+    "id": 17,
     "name": "Ruby",
     "buyPrice": 2820,
     "salePrice": 3000,
-    "initialStock": 20,
-    "remainingStock": 20
+    "initialStock": 10,
+    "remainingStock": 10
   },
   {
-    "id": 19,
+    "id": 18,
     "name": "M7_ဝါ",
     "buyPrice": 4500,
     "salePrice": 4700,
-    "initialStock": 40,
-    "remainingStock": 40
+    "initialStock": 50,
+    "remainingStock": 50
   },
   {
-    "id": 20,
+    "id": 19,
     "name": "W_ဝါ",
     "buyPrice": 3600,
     "salePrice": 4500,
-    "initialStock": 20,
-    "remainingStock": 20
+    "initialStock": 30,
+    "remainingStock": 30
   }
 
 
